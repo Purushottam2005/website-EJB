@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<application>
+		<message-bundle>resources.application</message-bundle>
+		<message-bundle>resources.home</message-bundle>
+		<message-bundle>resources.contato</message-bundle>
+		<message-bundle>resources.footer</message-bundle>
+
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+		</locale-config>
+	</application>
+
+	<!-- Login -->
+	<navigation-rule>
+		<!-- <from-view-id>/*</from-view-id> -->
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/faces/login/login.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<!-- Fim - Login -->
+
+	<!-- Menu -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>sobre</from-outcome>
+			<to-view-id>/faces/sobre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>contato</from-outcome>
+			<to-view-id>/faces/contato.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<!-- Fim - Menu -->
+
+	<!-- Cadastro -->
+	<navigation-rule>
+		<from-view-id>/faces/login/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>novoCadastro</from-outcome>
+			<to-view-id>/faces/usuarios/cadastro.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<!-- Fim - Cadastro -->
+	<!-- Protected Area -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>inicialProtected</from-outcome>
+			<to-view-id>/faces/protected/inicial.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>usuariosProtected</from-outcome>
+			<to-view-id>/faces/protected/usuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<!-- Fim - Protected Area -->
+
+</faces-config>

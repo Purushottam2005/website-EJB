@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition>
+		<!-- Footer -->
+		<f:loadBundle basename="resources.footer" var="footer_props" />
+		<div class="container">
+			<div class="footer-border"></div>
+			<div class="row">
+				<div class="span4">
+					<h2>#{footer_props['footer.title.header.left']}</h2>
+					<p>#{footer_props['footer.description.left']}</p>
+					<p>
+						<h:link outcome="home" value="#{footer_props['footer.description.link.left']}"></h:link>
+					</p>
+				</div>
+				<div class="span4">
+					<h2>#{footer_props['footer.title.header.central']}</h2>
+					<p>#{footer_props['footer.description.central']}</p>
+					<p>
+						<h:link outcome="home" value="#{footer_props['footer.description.link.central']}"></h:link>
+					</p>
+				</div>
+				<div class="span4">
+					<h2>#{footer_props['footer.title.header.right']}</h2>
+					<p>#{footer_props['footer.description.right']}</p>
+					<p>
+						<h:link outcome="home" value="#{footer_props['footer.description.link.right']}"></h:link>
+					</p>
+				</div>
+			</div>
+		</div>
+	</ui:composition>
+</h:body>
+</html>

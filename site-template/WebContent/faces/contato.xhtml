@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	<f:view>
+		<ui:composition template="/templates/default/default.xhtml">
+			<ui:define name="content">
+				<f:loadBundle basename="resources.contato" var="contato_props" />
+				<div class="container">	
+					<div id="contato" class="row-fluid content-top">
+						<div class="span7">
+							<h:form id="contatoForm" class="form-horizontal">
+								<div class="control-group">
+									<h:outputLabel styleClass="control-label" for="inputNome" value="#{contato_props.nome}"></h:outputLabel>
+									<div class="controls">
+										<h:inputText id="inputNome" styleClass="span10" value="#{contato.form.nome}" required="true" requiredMessage="Este campo é obrigatório."></h:inputText>
+										<h:message for="inputNome" errorClass="row alert-error"></h:message>
+									</div>
+								</div>
+								<div class="control-group">
+									<h:outputLabel styleClass="control-label" for="inputEmail" value="#{contato_props.email}"></h:outputLabel>
+									<div class="controls">
+										<h:inputText id="inputEmail" styleClass="span10" value="#{contato.form.email}" required="true" requiredMessage="Este campo é obrigatório."></h:inputText>
+										<h:message for="inputEmail" errorClass="row alert-error"></h:message>
+									</div>
+								</div>
+								<div class="control-group">
+									<h:outputLabel styleClass="control-label" for="inputMsg" value="#{contato_props.mensagem}"></h:outputLabel>
+									<div class="controls">
+									<h:inputTextarea id="inputMsg" rows="3" styleClass="span10" value="#{contato.form.mensagem}" required="true" requiredMessage="Este campo é obrigatório."></h:inputTextarea>
+									<h:message for="inputMsg" errorClass="row alert-error"></h:message>
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="controls">
+										<h:commandButton action="#{contato.enviarMensagem}" styleClass="btn btn-primary" value="#{contato_props['botao.enviar']}"></h:commandButton>
+										&nbsp;
+										<h:button styleClass="btn" value="#{contato_props['botao.cancelar']}"></h:button>
+									</div>
+								</div>
+								<h:messages infoClass="alert-success"></h:messages>
+							</h:form>
+						</div>
+						<div class="span5">
+							<a href="#" class="thumbnail"> <img alt=""
+								src="#{facesContext.externalContext.requestContextPath}/framework/img/default.png"></img>
+							</a>
+						</div>
+					</div>
+				</div>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+</h:body>
+</html>
