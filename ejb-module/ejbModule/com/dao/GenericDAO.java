@@ -10,9 +10,9 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
 public abstract class GenericDAO<T> {
-	private final static String UNIT_NAME = "CrudP";
+	private final static String UNIT_NAME = "EJBModulePU";
 	
-	@PersistenceContext(unitName = "UNIT_NAME")
+	@PersistenceContext(unitName = UNIT_NAME)
 	private EntityManager em;
 	
 	private Class<T> entityClass;

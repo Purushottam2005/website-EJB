@@ -1,26 +1,28 @@
 package com.site.usuario;
 
+import java.util.List;
+
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 
-@ManagedBean(name="usuarioController")
+import com.facade.UserFacade;
+import com.model.User;
+
+@ManagedBean(name = "usuarioController")
 @RequestScoped
 public class UsuarioController {
 
-	UsuarioForm formUser = new UsuarioForm();
+	@EJB
+	private UserFacade userFacade;
 
-	public UsuarioForm getFormUser() {
-		return formUser;
+	public void cadastrarUsuario() {
+
 	}
 
-	public void setFormUser(UsuarioForm formUser) {
-		this.formUser = formUser;
-	}
-	
-	public void cadastrarUsuario(){
-		System.out.println("Usuário: " + formUser.getNome() + " " +
-				formUser.getSenha() + " " +
-				formUser.getEmail()+ " " +
-				formUser.getRole() + " ");
-	}
+    public List<User> getAllUsers() {
+        return userFacade.findAll();
+    }
 }

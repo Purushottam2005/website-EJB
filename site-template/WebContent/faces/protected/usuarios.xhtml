@@ -11,36 +11,21 @@
 		<ui:composition template="/templates/protected/default.xhtml">
 			<ui:define name="content">
 				<div id="usuarios" class="container content-top">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Nome</th>
-								<th>E-mail</th>
-								<th>Grupo</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Larry</td>
-								<td>the Bird</td>
-								<td>@twitter</td>
-							</tr>
-						</tbody>
-					</table>
+					<h:dataTable value="#{usuarioController.allUsers}" var="users"
+						styleClass="table table-striped">
+						<h:column>
+							<f:facet name="header">
+			                    Nome
+			                </f:facet>
+			                #{users.nome}
+			            </h:column>
+						<h:column>
+							<f:facet name="header">
+			                    E-mail
+			                </f:facet>
+			                #{users.email}
+		           		</h:column>
+					</h:dataTable>
 				</div>
 			</ui:define>
 		</ui:composition>
