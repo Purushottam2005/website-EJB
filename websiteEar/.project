@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>websiteEar</name>
+	<name>websiteEAR</name>
 	<comment></comment>
 	<projects>
-		<project>EJBModule</project>
-		<project>site</project>
+		<project>moduleEJB</project>
+		<project>websiteWAR</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
