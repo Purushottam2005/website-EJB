@@ -12,4 +12,10 @@ public interface UserFacade {
 	
 	public abstract List<User> findAll();
 
+	public abstract void save(User user);
+
+	public abstract User update(User user);
+
+	public abstract void delete(User user);
+
 }
