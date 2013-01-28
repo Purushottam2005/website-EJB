@@ -46,7 +46,7 @@
 									
 									<h:commandButton
 										action="#{usuarioController.deleteUser}" value="Remover"
-										styleClass="btn btn-primary">
+										styleClass="btn btn-primary" onclick="return confirm('Você deseja remover este usuário?');">
 										<f:setPropertyActionListener
 											target="#{usuarioController.user}" value="#{users}" />
 									</h:commandButton>
