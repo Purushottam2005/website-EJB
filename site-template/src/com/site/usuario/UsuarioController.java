@@ -50,4 +50,32 @@ public class UsuarioController {
 		MessagesController.addInfo(null, "Cadastro realizado com sucesso.",
 				null);
 	}
+
+	public void updateUser() {
+		try {
+			userFacade.update(user);
+		} catch (EJBException e) {
+			MessagesController
+					.addError(
+							null,
+							"Não foi possível editar este cadastro. Tente novamente mais tarde.",
+							null);
+		}
+		MessagesController.addInfo(null, "Edição realizada com sucesso.", null);
+	}
+
+	public void deleteUser() {
+		try {
+			userFacade.delete(user);
+		} catch (EJBException e) {
+			MessagesController
+					.addError(
+							null,
+							"Não foi possível remover esta conta. Tente novamente mais tarde.",
+							null);
+		}
+		MessagesController.addInfo(null, "Usuário removido com sucesso.", null);
+
+	}
+
 }

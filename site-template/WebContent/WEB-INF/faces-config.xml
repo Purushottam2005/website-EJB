@@ -56,6 +56,7 @@
 		</navigation-case>
 	</navigation-rule>
 	<!-- Fim - Cadastro -->
+
 	<!-- Protected Area -->
 	<navigation-rule>
 		<navigation-case>
@@ -65,10 +66,18 @@
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>usuariosProtected</from-outcome>
-			<to-view-id>/faces/protected/usuarios.xhtml</to-view-id>
+			<to-view-id>/faces/protected/usuarios/usuarios.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/faces/protected/usuarios/usuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>editarCadastro</from-outcome>
+			<to-view-id>/faces/protected/usuarios/editar.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
 	<!-- Fim - Protected Area -->
 
 </faces-config>

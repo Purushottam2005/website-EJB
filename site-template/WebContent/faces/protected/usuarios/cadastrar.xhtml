@@ -1,0 +1,99 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:body>
+	<f:view>
+		<ui:composition template="/templates/protected/default.xhtml">
+			<ui:define name="content">
+				<div class="row-fluid">
+					<div class="span3">
+						<ui:include src="sideBarUsuarios.xhtml" />
+					</div>
+					<div id="usuarios" class="span9">
+						<h:form id="novoCadastroForm" styleClass="form-horizontal">
+							<h:messages infoClass="alert-success" errorClass="alert-error"
+								globalOnly="true"></h:messages>
+							<div class="control-group">
+								<h:outputLabel styleClass="control-label" for="nomeID"
+									value="Nome:"></h:outputLabel>
+								<div class="controls">
+									<h:inputText id="nomeID" value="#{usuarioController.user.nome}"
+										required="true"
+										requiredMessage="Este campo deve ser preenchido."></h:inputText>
+								</div>
+								<div class="controls">
+									<h:message for="nomeID" errorClass="alert-error"></h:message>
+								</div>
+							</div>
+							<div class="control-group">
+								<h:outputLabel styleClass="control-label" for="senhaID"
+									value="Senha:"></h:outputLabel>
+								<div class="controls">
+									<h:inputText id="senhaID"
+										value="#{usuarioController.user.senha}" required="true"
+										requiredMessage="Este campo deve ser preenchido."></h:inputText>
+								</div>
+								<div class="controls">
+									<h:message for="senhaID" errorClass="alert-error"></h:message>
+								</div>
+							</div>
+							<div class="control-group">
+								<h:outputLabel styleClass="control-label" for="confSenhaID"
+									value="Confirme a Senha:"></h:outputLabel>
+								<div class="controls">
+									<h:inputText id="confSenhaID"
+										value="#{usuarioController.user.senha}" required="true"
+										requiredMessage="Este campo deve ser preenchido."></h:inputText>
+								</div>
+								<div class="controls">
+									<h:message for="confSenhaID" errorClass="alert-error"></h:message>
+								</div>
+							</div>
+							<div class="control-group">
+								<h:outputLabel styleClass="control-label" for="emailID"
+									value="E-mail:"></h:outputLabel>
+								<div class="controls">
+									<h:inputText id="emailID"
+										value="#{usuarioController.user.email}" required="true"
+										requiredMessage="Este campo deve ser preenchido."></h:inputText>
+								</div>
+								<div class="controls">
+									<h:message for="emailID" errorClass="alert-error"></h:message>
+								</div>
+							</div>
+							<div class="control-group">
+								<h:outputLabel styleClass="control-label" for="selectRoleID"
+									value="Grupo:"></h:outputLabel>
+								<div class="controls">
+									<h:selectOneMenu id="selectRoleID"
+										value="#{usuarioController.user.role}" required="true"
+										requiredMessage="Por favor, selecione um grupo.">
+										<f:selectItem itemLabel="Selecione..." itemValue="#{null}"></f:selectItem>
+										<f:selectItem itemLabel="Administrador" itemValue="ADMIN"></f:selectItem>
+										<f:selectItem itemLabel="Usuário" itemValue="USER"></f:selectItem>
+									</h:selectOneMenu>
+								</div>
+								<div class="controls">
+									<h:message for="selectRoleID" errorClass="alert-error"></h:message>
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<h:commandButton value="Cadastrar" styleClass="btn btn-primary"
+										action="#{usuarioController.createUser}"></h:commandButton>
+								</div>
+							</div>
+						</h:form>
+					</div>
+				</div>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+</h:body>
+</html>
