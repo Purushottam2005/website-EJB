@@ -1,18 +1,19 @@
 website-EJB
 ===========
 
-Este é um projeto de um website com JSF 2.0, EJB 3.1, voltado para o aprendizado.
+Este é um projeto de um website com JSF 2.0, EJB 3.1, JPA EclipseLink voltado para o aprendizado.
 
 Por ser um projeto simples, o código é de fácil entendimento, qualquer aspirante a programador poderá entender.
 
 Os dois módulos implementados moduleEJB para as regras de negócio e persistência e o front-end websiteWAR estão empacotados em um EAR (websiteEAR) para rápida implantação no servidor.
 
 
-### Configuração do Banco de dados
+### Configuração do Banco de Dados
 ----------------------------------
 
-none
-
+Apenas é necessário criar um Banco de Dados.
+Configurar o DataSource no servidor e indicar o BD no persistence.xml.
+As tabelas são criadas automaticamente ao iniciar a aplicação, graças a implementação JPA com o EclipseLink.
 
 ### Servidor de aplicação
 --------------------------
