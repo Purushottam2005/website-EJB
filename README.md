@@ -23,4 +23,4 @@ Deve-se indicar o local do JDK para compilar as classes e indicar as bibliotecas
 
 * Acesse a aplicação através da url http://localhost:8080/websiteWAR
 
-O projeto executa no GlassFish 3.1.2, mas você pode utilizar o servidor que desejar.
+O projeto executa no GlassFish 3.1.2, mas você pode utilizar o servidor que desejar, apenas deve-se configurar o projeto.
