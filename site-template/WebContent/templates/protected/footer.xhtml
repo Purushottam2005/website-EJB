@@ -12,28 +12,8 @@
 		<f:loadBundle basename="resources.footer" var="footer_props" />
 		<div class="container">
 			<div class="footer-border"></div>
-			<div class="row">
-				<div class="span4">
-					<h2>#{footer_props['footer.title.header.left']}</h2>
-					<p>#{footer_props['footer.description.left']}</p>
-					<p>
-						<h:link outcome="home" value="#{footer_props['footer.description.link.left']}"></h:link>
-					</p>
-				</div>
-				<div class="span4">
-					<h2>#{footer_props['footer.title.header.central']}</h2>
-					<p>#{footer_props['footer.description.central']}</p>
-					<p>
-						<h:link outcome="home" value="#{footer_props['footer.description.link.central']}"></h:link>
-					</p>
-				</div>
-				<div class="span4">
-					<h2>#{footer_props['footer.title.header.right']}</h2>
-					<p>#{footer_props['footer.description.right']}</p>
-					<p>
-						<h:link outcome="home" value="#{footer_props['footer.description.link.right']}"></h:link>
-					</p>
-				</div>
+			<div class="pull-right">
+				<p class="muted">Powered by © Author.</p>
 			</div>
 		</div>
 	</ui:composition>
