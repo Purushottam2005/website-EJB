@@ -1,5 +1,7 @@
 package com.model;
 
+import java.io.Serializable;
+
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -11,12 +13,17 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "users")
 @NamedQuery(name="User.findUserByEmail", query="select u from User u where u.email = :email")
-public class User {
+public class User implements Serializable {
 
-	 public static final String FIND_BY_EMAIL = "User.findUserByEmail";
+	 /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static final String FIND_BY_EMAIL = "User.findUserByEmail";
 	
 	 @Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+	 @GeneratedValue(strategy=GenerationType.AUTO)
 	 private int id;
 	 
 	 @Column(unique = true)
