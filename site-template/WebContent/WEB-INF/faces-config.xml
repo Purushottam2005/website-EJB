@@ -69,6 +69,11 @@
 			<to-view-id>/faces/protected/usuarios/usuarios.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>cadastrarProtected</from-outcome>
+			<to-view-id>/faces/protected/usuarios/cadastrar.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
 		<from-view-id>/faces/protected/usuarios/usuarios.xhtml</from-view-id>

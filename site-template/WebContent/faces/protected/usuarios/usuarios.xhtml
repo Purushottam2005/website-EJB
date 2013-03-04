@@ -14,67 +14,71 @@
 					<div class="span3">
 						<ui:include src="sideBarUsuarios.xhtml" />
 					</div>
-					<div id="usuarios" class="span9">
-						<h:form>
-							<h:dataTable value="#{usuarioController.allUsers}" var="users"
-								styleClass="table table-striped">
-								<h:column>
-									<f:facet name="header">#</f:facet>
-				                #{users.id}
-			            	</h:column>
-								<h:column>
-									<f:facet name="header">Nome</f:facet>
-				                #{users.nome}
-			            	</h:column>
-								<h:column>
-									<f:facet name="header">E-mail</f:facet>
-				                #{users.email}
-			           		</h:column>
-								<h:column>
-									<f:facet name="header">Grupo</f:facet>
-				                #{users.role}
-			           		</h:column>
-								<h:column>
-									<!-- Always save the id as hidden when you use a request scope MB -->
-									<!-- <h:inputHidden value="#{users.id}" /> -->
-									<h:commandButton action="editarCadastro" value="Editar"
-										styleClass="btn">
-										<f:setPropertyActionListener
-											target="#{usuarioController.user}" value="#{users}" />
-									</h:commandButton>
+					<div id="usuarios">
+						<div id="visUsuariosProtected" class="span9">
+							<h:form>
+								<h:messages infoClass="alert-success" errorClass="alert-error"
+									globalOnly="true"></h:messages>
+								<h:dataTable value="#{usuarioController.allUsers}" var="users"
+									styleClass="table table-striped">
+									<h:column>
+										<f:facet name="header">#</f:facet>
+						                #{users.id}
+					            	</h:column>
+									<h:column>
+										<f:facet name="header">Nome</f:facet>
+						                #{users.nome}
+					            	</h:column>
+									<h:column>
+										<f:facet name="header">E-mail</f:facet>
+						                #{users.email}
+					           		</h:column>
+									<h:column>
+										<f:facet name="header">Grupo</f:facet>
+						                #{users.role}
+					           		</h:column>
+									<h:column>
+										<!-- Always save the id as hidden when you use a request scope MB -->
+										<!-- <h:inputHidden value="#{users.id}" /> -->
+										<h:commandButton action="editarCadastro" value="Editar"
+											styleClass="btn">
+											<f:setPropertyActionListener
+												target="#{usuarioController.user}" value="#{users}" />
+										</h:commandButton>
 									&nbsp; 
 									
-									<h:commandButton
-										action="#{usuarioController.deleteUser}" value="Remover"
-										styleClass="btn btn-primary" onclick="return confirm('Você deseja remover este usuário?');">
+									<h:commandButton action="#{usuarioController.deleteUser}"
+											value="Remover" styleClass="btn btn-primary"
+											onclick="return confirm('Você deseja remover este usuário?');">
+											<f:setPropertyActionListener
+												target="#{usuarioController.user}" value="#{users}" />
+										</h:commandButton>
+										<!-- 									<a href="#myModalUser" role="button" data-toggle="modal" -->
+										<!-- 										class="btn">Remover</a> -->
+
+									</h:column>
+								</h:dataTable>
+							</h:form>
+							<!-- Modal -->
+							<div id="myModalUser" class="modal hide fade" tabindex="-1"
+								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-hidden="true">×</button>
+									<h4 id="myModalLabel">Você tem certeza que irá remover
+										este usuário?</h4>
+								</div>
+								<div class="modal-body">
+									<p>&nbsp; #{users.nome}</p>
+								</div>
+								<div class="modal-footer">
+									<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
+									<h:commandButton action="#{usuarioController.deleteUser}"
+										value="Remover" styleClass="btn btn-primary">
 										<f:setPropertyActionListener
 											target="#{usuarioController.user}" value="#{users}" />
 									</h:commandButton>
-<!-- 									<a href="#myModalUser" role="button" data-toggle="modal" -->
-<!-- 										class="btn">Remover</a> -->
-
-								</h:column>
-							</h:dataTable>
-						</h:form>
-						<!-- Modal -->
-						<div id="myModalUser" class="modal hide fade" tabindex="-1"
-							role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal"
-									aria-hidden="true">×</button>
-								<h4 id="myModalLabel">Você tem certeza que irá remover este
-									usuário?</h4>
-							</div>
-							<div class="modal-body">
-								<p>&nbsp; #{users.nome}</p>
-							</div>
-							<div class="modal-footer">
-								<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-								<h:commandButton action="#{usuarioController.deleteUser}"
-									value="Remover" styleClass="btn btn-primary">
-									<f:setPropertyActionListener target="#{usuarioController.user}"
-										value="#{users}" />
-								</h:commandButton>
+								</div>
 							</div>
 						</div>
 					</div>
